@@ -13,4 +13,3 @@ const ingredients = [
     listItem.classList.add('item');
     ingredientsList.appendChild(listItem);
   });
-  console.log("Ingredientele sunt:", ingredients);
