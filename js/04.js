@@ -1,15 +1,30 @@
+// let counterValue = 0;
+//   const counterElement = document.getElementById('counter');
+//   const valueElement = document.getElementById('value');
+//  counterElement.addEventListener('click',(event) => {
+//   const action = event.target.dataset.action;
+//   if(action === 'decrement') {
+//     counterValue--;
+//   }
+//   else if (action === 'increment'){
+//     counterValue++;
+//   }
+//   valueElement.textContent = counterValue;
+//  }
+//  );
+    
 let counterValue = 0;
-  const valueElement = document.getElementById('value');
-  const decrementButton = document.querySelector('[data-action="decrement"]');
-  const incrementButton = document.querySelector('[data-action="increment"]');
-  decrementButton.addEventListener('click', () => {
-    counterValue -= 1;
-    updateCounter();
-  });
-  incrementButton.addEventListener('click', () => {
-    counterValue += 1;
-    updateCounter();
-  });
-  function updateCounter() {
+const counterElement = document.getElementById('counter');
+const valueElement = document.getElementById('value');
+counterElement.addEventListener('click', (event) => {
+    const action = event.target.dataset.action;
+    if (action === 'decrement') {
+        counterValue--;
+    }
+    else if (action === 'increment') {
+        counterValue++;
+    }
     valueElement.textContent = counterValue;
-  }
+}
+);
+
