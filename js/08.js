@@ -1,18 +1,14 @@
-const loginForm = document.getElementById('loginForm');
-  loginForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-    const formElements = loginForm.elements;
-    const formData = {};
-    for (let i = 0; i < formElements.length; i++) {
-      const element = formElements[i];
-      if (element.tagName === 'INPUT' && element.type !== 'submit') {
-        formData[element.name] = element.value;
-      }
-    }
-    if (!formData.email || !formData.password) {
-      alert('Toate câmpurile trebuie completate.');
-    } else {
-      console.log(formData);
-      loginForm.reset();
-    }
-  });
+const registerForm = document.querySelector('.login-form');
+registerForm.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event){
+  event.preventDefault();
+  const form = event.target;
+  const email = form.elements.email.value;
+  const password = form.elements.password.value;
+
+  if (email === "" || password === ""){
+    alert("Please fill in all the fields!");
+  }
+  form.reset();
+}
